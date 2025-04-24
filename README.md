@@ -9,6 +9,7 @@ Este proyecto complementa la API desarrollada con el mismo nombre. [Ir a la API]
 - **VueJS:** Framework de JavaScript para construir interfaces de usuario.
 - **TypeScript:** Lenguaje de programación que es un superconjunto de JavaScript, que añade tipado estático.
 - **Vue Router:** Librería para manejar rutas en aplicaciones Vue.js.
+- **Axios:** Librería para hacer peticiones HTTP.
 
 ## Guías
 
