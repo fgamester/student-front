@@ -25,7 +25,7 @@ async function handleSubmit() {
 <template>
   <form
     @submit.prevent="handleSubmit"
-    class="w-full flex flex-col px-3 py-3 gap-3"
+    class="w-full flex flex-col px-3 py-3 gap-3 sm:w-3/4 sm:mx-auto md:w-2/3 lg:w-1/2 xl:w-2/5"
   >
     <div class="flex flex-col w-full items-start justify-start gap-1">
       <label for="name">Nombre:</label>

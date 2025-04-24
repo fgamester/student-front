@@ -29,9 +29,9 @@ async function handleSubmit() {
 <template>
   <form
     @submit.prevent="handleSubmit"
-    class="w-full flex flex-col px-3 py-3 gap-3"
+    class="w-full flex flex-col px-3 py-3 gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:w-3/4 md:mx-auto lg:w-2/3 xl:w-1/2"
   >
-    <div class="flex flex-col w-full items-start justify-start gap-1">
+    <div class="flex flex-col w-full items-start justify-start gap-1 sm:w-[calc(50%-10px)]">
       <label for="f-name">Nombre:</label>
       <input
         class="w-full bg-1 text-6 placeholder:text-4 rounded-md p-1"
@@ -42,7 +42,7 @@ async function handleSubmit() {
         required
       />
     </div>
-    <div class="flex flex-col w-full items-start justify-start gap-1">
+    <div class="flex flex-col w-full items-start justify-start gap-1 sm:w-[calc(50%-10px)]">
       <label for="l-name">Apellido:</label>
       <input
         class="w-full bg-1 text-6 placeholder:text-4 rounded-md p-1"
@@ -53,7 +53,7 @@ async function handleSubmit() {
         required
       />
     </div>
-    <div class="flex flex-col w-full items-start justify-start gap-1">
+    <div class="flex flex-col w-full items-start justify-start gap-1 sm:w-[calc(50%-10px)]">
       <label for="email">E-Mail:</label>
       <input
         class="w-full bg-1 text-6 placeholder:text-4 rounded-md p-1"
@@ -64,7 +64,7 @@ async function handleSubmit() {
         required
       />
     </div>
-    <div class="flex flex-col w-full items-start justify-start gap-1">
+    <div class="flex flex-col w-full items-start justify-start gap-1 sm:w-[calc(50%-10px)]">
       <label for="phone">Telefono:</label>
       <input
         class="w-full bg-1 text-6 placeholder:text-4 rounded-md p-1"

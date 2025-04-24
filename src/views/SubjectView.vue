@@ -10,7 +10,7 @@ const subjectId = parseInt(paramId as string, 10);
 const subject = ref<Subject | null>(null);
 
 async function getData() {
-    subject.value = await useGetSubject(subjectId);
+  subject.value = await useGetSubject(subjectId);
 }
 
 onMounted(() => {
@@ -18,18 +18,18 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div id="main-container" class="bg-5 text-1 p-3">
+  <div id="main-container" class="flex flex-col bg-5 text-1 p-3 gap-2 sm:items-center sm:gap-3">
     <header>
       <h1 class="text-2xl text-center">Datos de la Asignatura</h1>
     </header>
-    <main>
+    <main class="bg-transparent sm:w-fit sm:bg-4 sm:p-4 sm:rounded-xl md:w-2/3 lg:w-1/2">
       <div id="f-name">
         <p>
           <b>Nombre:</b>
           {{ subject?.name }}
         </p>
       </div>
-            <div id="description">
+      <div id="description">
         <p class="break-words">
           <b>Descripción:</b>
           {{

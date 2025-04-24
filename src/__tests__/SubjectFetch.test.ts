@@ -23,7 +23,7 @@ function compareData(newData: Partial<Subject>, respData: any): boolean {
 
 describe('Test Post Asignaturas', () => {
     it('Post de Multiples Asignaturas', async () => {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 30; i++) {
             const newNumber = rng();
             const data: Partial<Subject> = {
                 name: `Subject #${newNumber}`,

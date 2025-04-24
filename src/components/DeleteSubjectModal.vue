@@ -19,7 +19,7 @@ defineProps<{
       <header class="flex flex-col gap-2">
         <h1 class="text-2xl text-center">Confirmar Eliminación</h1>
         <p class="text-center">
-          ¿Estás seguro que quieres eliminar el siguiente Usuario?
+          ¿Estás seguro que quieres eliminar la siguiente Asignatura?
         </p>
         <p class="text-center">{{ subject.name }}</p>
       </header>

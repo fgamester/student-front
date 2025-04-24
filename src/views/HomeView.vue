@@ -5,16 +5,11 @@ import HomeOptionCard from "../components/HomeOptionCard.vue";
 <template>
   <div class="w-full flex flex-col gap-3 p-2">
     <header>
-      <h1>Home</h1>
-      <p>Bienvenido a la pagina principal</p>
+      <p class="text-center">Bienvenido al panel de Gestión de Usuarios</p>
     </header>
-    <main class="flex w-full justify-evenly">
-      <RouterLink to="/users">
-        <HomeOptionCard label="Users" />
-      </RouterLink>
-      <RouterLink to="/subjects">
-        <HomeOptionCard label="Asignaturas" />
-      </RouterLink>
+    <main class="flex w-full justify-evenly gap-1 px-3 sm:gap-5 sm:justify-center">
+      <HomeOptionCard label="Users" path-to="/users" />
+      <HomeOptionCard label="Asignaturas" path-to="/subjects" />
     </main>
   </div>
 </template>
