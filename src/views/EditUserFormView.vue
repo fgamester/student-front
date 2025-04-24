@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { reactive } from "vue";
+import { onMounted, reactive, ref } from "vue";
 import { isUser, type User } from "../types";
-import { usePostUser } from "../composables/useFetch";
-import { useRouter } from "vue-router";
+import { useGetUser, useUpdateUser } from "../composables/useFetch";
+import { useRoute, useRouter } from "vue-router";
 
 const formData = reactive<Partial<User>>({
   firstName: "",
@@ -13,22 +13,44 @@ const formData = reactive<Partial<User>>({
   description: "",
 });
 
-const router = useRouter();
+const user = ref<User | null>(null);
 
-async function handleSubmit() {
+const router = useRouter();
+const paramId = useRoute().params.id;
+const userId = parseInt(paramId as string, 10);
+
+async function getData() {
+  user.value = await useGetUser(userId);
+  if (isUser(user.value)){
+    formData.firstName = user.value.firstName;
+    formData.lastName = user.value.lastName;
+    formData.email = user.value.email;
+    formData.phoneNumber = user.value.phoneNumber || "";
+    formData.address = user.value.address || "";
+    formData.description = user.value.description || "";
+  }
+}
+
+async function handleSubmit(id: number, data: Partial<User>) {
   try {
-    const formSubmit = await usePostUser(formData);
+    const formSubmit = await useUpdateUser(id, data);
     if (isUser(formSubmit)) {
-        router.push(`/users/${formSubmit.id}`);
+      router.push(`/users/${formSubmit.id}`);
     }
   } catch (error) {
     console.error("Error en la petición", error);
   }
 }
+
+onMounted(() => {
+  if (typeof userId === "number") getData();
+});
 </script>
+
 <template>
   <form
-    @submit.prevent="handleSubmit"
+    v-if="user"
+    @submit.prevent="handleSubmit(user?.id, formData)"
     class="w-full flex flex-col px-3 py-3 gap-3"
   >
     <div class="flex flex-col w-full items-start justify-start gap-1">
@@ -96,8 +118,14 @@ async function handleSubmit() {
     </div>
     <div class="w-full">
       <button class="bg-2 text-6 p-2 rounded-md w-full mt-3" type="submit">
-        Crear Usuario
+        Actualizar Datos
       </button>
     </div>
   </form>
+  <div v-else>
+    <header>
+      <h1>Usuario no encontrado</h1>
+    </header>
+    <p>El usuario que intentas editar no existe.</p>
+  </div>
 </template>

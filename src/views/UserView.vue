@@ -18,7 +18,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div id="main-container" class="bg-5 text-1 p-2">
+  <div id="main-container" class="bg-5 text-1 p-3">
     <header>
       <h1 class="text-2xl text-center">Datos del usuario</h1>
     </header>
@@ -50,22 +50,19 @@ onMounted(() => {
         </p>
       </div>
       <div id="address">
-        <p>
+        <p >
           <b>Dirección:</b>
           {{ user?.address ? user.address : "No hay dirección registrada" }}
         </p>
       </div>
       <div id="description">
-        <p>
+        <p class="break-words">
           <b>Descripción:</b>
           {{
-            !user?.description || user?.description.length === 0
-              ? "No hay descripción."
-              : ""
+            user?.description && user.description.length > 0
+              ? user.description
+              : "No hay descripción."
           }}
-        </p>
-        <p class="text-justify py-2 px-3 m-1 border rounded-xl bg-4" v-if="user?.description">
-          {{ user?.description }}
         </p>
       </div>
     </main>

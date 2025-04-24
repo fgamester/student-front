@@ -62,13 +62,13 @@ export function convertToLocalUser(obj: any): User {
     return newObj;
 }
 
-export function convertToApiUser(obj: Partial<User>) {
+export function convertToApiUser(obj: Partial<User>, allowEmptyOptional: boolean = false) {
     return {
         ...(typeof obj.firstName === 'string' && { first_name: obj.firstName }),
         ...(typeof obj.lastName === 'string' && { last_name: obj.lastName }),
         ...(typeof obj.email === 'string' && { email: obj.email }),
-        ...(typeof obj.description === 'string' && obj.description.length > 0 && { description: obj.description }),
-        ...(typeof obj.phoneNumber === 'string' && obj.phoneNumber.length > 0 && { phone_number: obj.phoneNumber }),
-        ...(typeof obj.address === 'string' && obj.address.length > 0 && { address: obj.address }),
+        ...(typeof obj.description === 'string' && (obj.description.length > 0 || allowEmptyOptional) && { description: obj.description }),
+        ...(typeof obj.phoneNumber === 'string' && (obj.phoneNumber.length > 0 || allowEmptyOptional) && { phone_number: obj.phoneNumber }),
+        ...(typeof obj.address === 'string' && (obj.address.length > 0 || allowEmptyOptional) && { address: obj.address }),
     }
 }

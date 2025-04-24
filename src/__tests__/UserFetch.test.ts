@@ -23,7 +23,7 @@ function compareData(newData: Partial<User>, respData: any): boolean {
 
 describe('Api Post Tests', () => {
     it('Post de Multiples usuarios', async () => {
-        for (let i = 0; i < 1; i++) {
+        for (let i = 0; i < 2; i++) {
             const newNumber = rng();
             const data: Partial<User> = {
                 firstName: `John ${newNumber}`,
@@ -31,6 +31,7 @@ describe('Api Post Tests', () => {
                 email: `jdoe${newNumber}@email.com`
             }
             const resp = await usePostUser(data);
+            console.log(resp)
             expect(isUser(resp)).toBe(true);
         }
     });

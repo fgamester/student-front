@@ -1,19 +1,29 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRoute } from "vue-router";
+import { computed } from "vue";
+
+const route = useRoute();
+const fullPath = computed(() => route.path);
+</script>
 
 <template>
   <nav
     id="nb-main"
-    class="fixed top-0 left-0 w-screen flex justify-between p-2 bg-6 text-1 items-center"
+    class="fixed top-0 left-0 w-screen flex justify-start p-2 bg-6 text-1 gap-6 items-baseline"
   >
-    <ul class="flex items-baseline gap-2">
+    <RouterLink class="text-2xl" to="/"> Inicio </RouterLink>
+    <ul class="flex gap-3">
       <li>
-        <RouterLink class="text-2xl" to="/"> Inicio </RouterLink>
+        <p v-if="fullPath === '/users'" class="text-md">Usuarios</p>
+        <RouterLink v-else class="text-md" to="/users"> Usuarios </RouterLink>
       </li>
       <li>
-        <RouterLink class="text-md" to="/users"> Usuarios </RouterLink>
+        <p v-if="fullPath === '/subjects'" class="text-md">Asignaturas</p>
+        <RouterLink v-else class="text-md" to="/subjects">
+          Asignaturas
+        </RouterLink>
       </li>
     </ul>
-    <RouterLink class="text-lg" to="/users/create"> Nuevo Usuario </RouterLink>
   </nav>
 </template>
 

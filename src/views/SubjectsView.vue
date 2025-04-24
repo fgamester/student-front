@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { type User } from "../types";
+import { type Subject } from "../types";
 import {
-  useFullRemoveUser,
-  useGetAllActiveUsers,
-  useSoftRemoveUser,
-} from "../composables/useFetch";
-import UserPreview from "../components/UserPreview.vue";
-import DeleteModal from "../components/DeleteUserModal.vue";
+  useFullRemoveSubject,
+  useGetAllActiveSubjects,
+  useSoftRemoveSubject,
+} from "../composables/useSubjectFetch";
+import SubjectPreview from "../components/SubjectPreview.vue";
+import DeleteSubjectModal from "../components/DeleteSubjectModal.vue";
 
-const usersList = ref<User[]>([]);
-const user = ref<User | null>(null);
+const subjectsList = ref<Subject[]>([]);
+const subject = ref<Subject | null>(null);
 const modalVisibility = ref<boolean>(false);
 
 async function getData() {
   try {
-    usersList.value = await useGetAllActiveUsers();
+    subjectsList.value = await useGetAllActiveSubjects();
   } catch (error) {
     console.error("Error en la petición", error);
   }
@@ -23,7 +23,7 @@ async function getData() {
 
 async function softDelete(id: number): Promise<void> {
   try {
-    await useSoftRemoveUser(id);
+    await useSoftRemoveSubject(id);
     window.location.reload();
   } catch (error) {
     console.error("Error en la petición", error);
@@ -32,20 +32,20 @@ async function softDelete(id: number): Promise<void> {
 
 async function fullDelete(id: number): Promise<void> {
   try {
-    await useFullRemoveUser(id);
+    await useFullRemoveSubject(id);
     window.location.reload();
   } catch (error) {
     console.error("Error en la petición", error);
   }
 }
 
-function setUser(u: User) {
-  user.value = u;
+function setSubject(u: Subject) {
+  subject.value = u;
   modalVisibility.value = true;
 }
 
 function resetDataToDelete() {
-  user.value = null;
+  subject.value = null;
   modalVisibility.value = false;
 }
 
@@ -56,32 +56,32 @@ onMounted(() => {
 
 <template>
   <div
-    v-if="usersList.length > 0"
+    v-if="subjectsList.length > 0"
     id="main-container"
     class="w-full flex flex-col gap-3 p-3 h-[calc(100vh-50px)]"
   >
     <header class="px-1">
-      <h1 class="text-center text-2xl">Usuarios</h1>
-      <p>Aquí encontrarás una lista con todos los usuarios</p>
+      <h1 class="text-center text-2xl">Asignaturas</h1>
+      <p class="text-center">Aquí encontrarás una lista de todas las asignaturas vigentes</p>
     </header>
     <main class="flex flex-col flex-grow gap-2 overflow-y-auto">
       <div class="flex flex-col flex-grow gap-2 overflow-y-auto">
-        <UserPreview
-          v-for="user in usersList"
-          :key="user.id"
-          :user="user"
-          :toDelete="setUser"
+        <SubjectPreview
+          v-for="subject in subjectsList"
+          :key="subject.id"
+          :subject="subject"
+          :toDelete="setSubject"
         />
       </div>
       <div class="flex w-full justify-center">
         <RouterLink
-          to="/users/create"
+          to="/subjects/create"
           class="w-full p-2 bg-3 rounded-lg text-center"
-          >Nuevo Usuario</RouterLink
+          >Nueva Asignatura</RouterLink
         >
       </div>
-      <DeleteModal
-        :user="user"
+      <DeleteSubjectModal
+        :subject="subject"
         :softDelete="softDelete"
         :fullDelete="fullDelete"
         :cancel="resetDataToDelete"
@@ -91,15 +91,15 @@ onMounted(() => {
   </div>
   <div v-else class="w-full flex flex-col gap-3 p-3 h-[calc(100vh-50px)]">
     <header class="px-1">
-      <h1 class="text-center text-2xl">Sin Usuarios</h1>
+      <h1 class="text-center text-2xl">Sin Asignaturas</h1>
       <p class="text-center">
-        Parece ser que no tienes ningún usuario registrado. ¿Te gustaría crear
-        uno nuevo?
+        Parece ser que no tienes ninguna asignatura creada. ¿Te gustaría crear
+        una nueva?
       </p>
     </header>
     <main class="flex flex-col justify-end flex-grow">
-      <RouterLink to="/users/create" class="p-2 bg-3 rounded-lg text-center"
-        >Nuevo Usuario</RouterLink
+      <RouterLink to="/subjects/create" class="p-2 bg-3 rounded-lg text-center"
+        >Nueva Asignatura</RouterLink
       >
     </main>
   </div>
