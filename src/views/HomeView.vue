@@ -1,15 +1,53 @@
-<script lang="ts" setup>
-import HomeOptionCard from "../components/HomeOptionCard.vue";
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <div class="w-full flex flex-col gap-3 p-2">
-    <header>
-      <p class="text-center">Bienvenido al panel de Gestión de Usuarios</p>
-    </header>
-    <main class="flex w-full justify-evenly gap-1 px-3 sm:gap-5 sm:justify-center">
-      <HomeOptionCard label="Users" path-to="/users" />
-      <HomeOptionCard label="Asignaturas" path-to="/subjects" />
-    </main>
-  </div>
+  <span class="ML__latex"
+    ><span class="ML__strut" style="height: 0.87em"></span
+    ><span
+      class="ML__strut--bottom"
+      style="height: 1.12em; vertical-align: -0.24em"
+    ></span
+    ><span class="ML__base"
+      ><span class="ML__msubsup"
+        ><span class="ML__vlist-t ML__vlist-t2"
+          ><span class="ML__vlist-r"
+            ><span class="ML__vlist" style="height: 0.87em;"
+              ><span style="top: -2.75em"
+                ><span class="ML__pstrut" style="height: 3em"></span
+                ><span
+                  style="height: 0.46em; display: inline-block; font-size: 70%"
+                  ><span class="ML__cmr">90</span></span
+                ></span
+              ><span style="top: -3.41em"
+                ><span class="ML__pstrut" style="height: 3em"></span
+                ><span
+                  style="height: 0.46em; display: inline-block; font-size: 70%"
+                  ><span class="ML__cmr">227</span></span
+                ></span
+              ></span
+            ><span class="ML__vlist-s">​</span></span
+          ><span class="ML__vlist-r"
+            ><span
+              class="ML__vlist"
+              style="height: 0.25em"
+            ></span></span></span></span
+      ><span class="ML__mathit" style="margin-right: 0.14em">T</span
+      ><span class="ML__mathit">h</span
+      ><span class="ML__msubsup"
+        ><span class="ML__vlist-t"
+          ><span class="ML__vlist-r"
+            ><span class="ML__vlist" style="height: 0.83em"
+              ><span style="top: -3.41em; margin-right: 0.05em"
+                ><span class="ML__pstrut" style="height: 3em"></span
+                ><span
+                  style="height: 0.47em; display: inline-block; font-size: 70%"
+                  ><span class="ML__cmr">+</span></span
+                ></span
+              ></span
+            ></span
+          ></span
+        ></span
+      ></span
+    ></span
+  >
 </template>
