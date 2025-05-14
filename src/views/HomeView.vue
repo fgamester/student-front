@@ -1,12 +1,15 @@
 <template>
-  <span style="font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;">
-    <span style="font-style: italic;">MnO</span>
-    <span style="font-size: 0.625em; vertical-align: sub;">2</span>
+  <span style="font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px; vertical-align: middle;">
+    <span style="display: inline-flex; flex-direction: column; line-height: 0.75em; vertical-align: 0.75em;">
+      <span style="font-size: 0.625em; align-self: center;">+4</span>
+      <span style="font-style: italic;">Mn</span>
+    </span>
   </span>
 </template>
 <script lang="ts" setup>
 const completed = {
   "": "",
+  "\\overset{+4}{Mn}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px; vertical-align: middle;\"><span style=\"display: inline-flex; flex-direction: column; line-height: 0.75em; vertical-align: 0.75em;\"><span style=\"font-size: 0.625em; align-self: center;\">+4</span><span style=\"font-style: italic;\">Mn</span></span></span>",
   "MnO_{2}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span style=\"font-style: italic;\">MnO</span><span style=\"font-size: 0.625em; vertical-align: sub;\">2</span></span>",
   "H_{2}O": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span style=\"font-style: italic;\">H</span><span style=\"font-size: 0.625em; vertical-align: sub;\">2</span><span style=\"font-style: italic;\">O</span></span>",
   "Sb_{2}O_{3}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span style=\"font-style: italic;\">Sb</span><span style=\"font-size: 0.625em; vertical-align: sub;\">2</span><span style=\"font-style: italic;\">O</span><span style=\"font-size: 0.625em; vertical-align: sub;\">3</span></span>",
