@@ -1,12 +1,15 @@
 <template>
   <span style="font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;">
-    <span style="font-style: italic; margin-right: 0.15em;">Y</span>
-    <span style="vertical-align: super; font-size: 0.625em;">99+</span>
+    <span style="font-style: italic;">Sb</span>
+    <span style="font-size: 0.625em; vertical-align: sub;">2</span>
+    <span style="font-style: italic;">O</span>
+    <span style="font-size: 0.625em; vertical-align: sub;">3</span>
   </span>
 </template>
 <script lang="ts" setup>
 const completed = {
   "": "",
+  "Sb_{2}O_{3}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span style=\"font-style: italic;\">Sb</span><span style=\"font-size: 0.625em; vertical-align: sub;\">2</span><span style=\"font-style: italic;\">O</span><span style=\"font-size: 0.625em; vertical-align: sub;\">3</span></span>",
   "Y^{99+}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span style=\"font-style: italic; margin-right: 0.15em;\">Y</span><span style=\"vertical-align: super; font-size: 0.625em;\">99+</span></span>",
   "[AgCl_{2}]^{-}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span>[</span><span style=\"font-style: italic;\">AgCl</span><span style=\"vertical-align: sub; font-size: 0.75em;\">2</span><span>]</span><span style=\"vertical-align: 0.5em; line-height: 0.5em;\">–</span></span>",
   "CrO_{4}^{2-}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span style=\"font-style: italic;\">CrO</span><span style=\"display: inline-flex; flex-direction: column; line-height: 0.75em; vertical-align: middle; margin-left: 0.05em;\"><span style=\"font-size: 0.75em;\">2–</span><span style=\"font-size: 0.75em;\">4</span></span></span>",
