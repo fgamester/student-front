@@ -1,9 +1,9 @@
 <template>
   <span style="font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;">
-    <span style="font-size: 0.625em; vertical-align: sub;">▢</span>
-    <span style="font-size: 0.625em; vertical-align: super; margin-left: -0.825em;">▢</span>
     <span>▢</span>
-    <span style="font-size: 0.625em; vertical-align: super;">▢</span>
+    <span>▢</span>
+    <span style="font-size: 0.625em; vertical-align: sub;">▢</span>
+    <span>▢</span>
   </span>
 </template>
 <script lang="ts" setup>
@@ -13,7 +13,11 @@ const completed = {
   "#0^{#0}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span>▢</span><span style=\"font-size: 0.625em; vertical-align: super;\">▢</span></span>",
   "#0_{#0}^{#0}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span>▢</span><span style=\"font-size: 0.625em; vertical-align: super;\">▢</span><span style=\"font-size: 0.625em; vertical-align: sub; margin-left: -0.825em;\">▢</span></span>",
   "[#0_{#0}]^{#0}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span>[</span><span>▢</span><span style=\"font-size: 0.625em; vertical-align: sub;\">▢</span><span>]</span><span style=\"font-size: 0.625em; vertical-align: super;\">▢</span></span>",
-  "#0 #0_{#0}#0": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span style=\"font-size: 0.625em; vertical-align: sub;\">▢</span><span style=\"font-size: 0.625em; vertical-align: super; margin-left: -0.825em;\">▢</span><span>▢</span><span style=\"font-size: 0.625em; vertical-align: super;\">▢</span></span>",
+  "^{#0}_{#0}#0^{#0}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span style=\"font-size: 0.625em; vertical-align: sub;\">▢</span><span style=\"font-size: 0.625em; vertical-align: super; margin-left: -0.825em;\">▢</span><span>▢</span><span style=\"font-size: 0.625em; vertical-align: super;\">▢</span></span>",
+  "#0_{#0}#0": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span>▢</span><span style=\"font-size: 0.625em; vertical-align: sub;\">▢</span><span>▢</span></span>",
+  "#0^{#0}#0": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span>▢</span><span style=\"font-size: 0.625em; vertical-align: super;\">▢</span><span>▢</span></span>",
+  "#0_{#0}#0_{#0}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span>▢</span><span style=\"font-size: 0.625em; vertical-align: sub;\">▢</span><span>▢</span><span style=\"font-size: 0.625em; vertical-align: sub;\">▢</span></span>",
+  "#0 #0_{#0}#0": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span>▢</span><span>▢</span><span style=\"font-size: 0.625em; vertical-align: sub;\">▢</span><span>▢</span></span>",
   "": "",
   "\\overset{+4}{Mn}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px; vertical-align: middle;\"><span style=\"display: inline-flex; flex-direction: column; line-height: 0.75em; vertical-align: 0.75em;\"><span style=\"font-size: 0.625em; align-self: center;\">+4</span><span style=\"font-style: italic;\">Mn</span></span></span>",
   "MnO_{2}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span style=\"font-style: italic;\">MnO</span><span style=\"font-size: 0.625em; vertical-align: sub;\">2</span></span>",
