@@ -1,13 +1,20 @@
 <template>
-  <span style="font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;">
+  <span style="font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px; margin: 0.125em 0 0.25em">
     <span>▢ + ▢</span>
     <span
-      style="display: inline-flex;flex-direction: column; font-size: 0.625em; line-height: 0.5em; align-items: center; vertical-align: 0.75em; margin-right: 0.75em; margin-left: 0.75em;">
+      style="display: inline-flex;flex-direction: column; font-size: 0.625em; line-height: 0.5em; align-items: center; vertical-align: middle; margin-right: 0.75em; margin-left: 0.75em;">
       <span>▢</span>
-      <span style="display: inline-flex; margin-top: 0.125em; margin-bottom: 0.25em; transform: translateX(0.125em);">
-        <span>—</span>
-        <span>—</span>
-        <span style="margin-left: -0.5em; transform: translateY(0.1em);">></span>
+      <span style="display: inline-flex; flex-direction: column; line-height: 0.25em; margin: 0.075em 0 0.125em;font-size: 1.25em;">
+        <span style="display: inline-flex; margin-top: 0.125em; transform: translateX(0.125em);">
+          <span>—</span>
+          <span>—</span>
+          <span style="margin-left: -0.5em; transform: translateY(0.1em); font-size: 0.75em;">></span>
+        </span>
+        <span style="display: inline-flex; margin-bottom: 0.25em; transform: translateX(0.125em);">
+          <span style="margin-right: -0.5em; transform: translateY(0.1em); font-size: 0.75em;"><</span>
+          <span>—</span>
+          <span>—</span>
+        </span>
       </span>
       <span>▢</span>
     </span>
@@ -29,6 +36,7 @@ const completed = {
   "\\tfrac{#0}{#0} #0_{#0}#0": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span style=\"display: inline-flex;flex-direction: column; font-size: 0.625em; line-height: 0.5em; align-items: center; vertical-align: 0.75em; margin-right: 0.25em;\"><span>▢</span><span style=\"margin-bottom: 0.25em;\">—</span><span>▢</span></span><span>▢</span><span style=\"font-size: 0.625em; vertical-align: sub;\">▢</span><span>▢</span></span>",
   "#0 \\ + \\ #0 \\ \\xlongequal[#0]{#0} \\ #0 \\ + \\ #0": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span>▢ + ▢</span><span style=\"display: inline-flex;flex-direction: column; font-size: 0.625em; line-height: 0.5em; align-items: center; vertical-align: 0.75em; margin-right: 0.25em;\"><span>▢</span><span style=\"display: inline-flex; flex-direction: column; rotate: 90deg; gap: 0.2em; margin: -0.25em 1.125em -0.25em;\"><span>ǁ</span><span>ǁ</span></span><span>▢</span></span><span>▢ + ▢</span></span>",
   "#0 \\ + \\ #0 \\ \\longrightarrow[#0]{#0} \\ #0 \\ + \\ #0": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span>▢ + ▢</span><span style=\"display: inline-flex;flex-direction: column; font-size: 0.625em; line-height: 0.5em; align-items: center; vertical-align: 0.75em; margin-right: 0.75em; margin-left: 0.75em;\"><span>▢</span><span style=\"display: inline-flex; margin-top: 0.125em; margin-bottom: 0.25em; transform: translateX(0.125em);\"><span>—</span><span>—</span><span style=\"margin-left: -0.5em; transform: translateY(0.1em);\">></span></span><span>▢</span></span><span>▢ + ▢</span></span>",
+  "#0 \\ + \\ #0 \\ \\xtofrom[#0]{#0} \\ #0 \\ + \\ #0": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px; margin: 0.125em 0 0.25em\"><span>▢ + ▢</span><span style=\"display: inline-flex;flex-direction: column; font-size: 0.625em; line-height: 0.5em; align-items: center; vertical-align: middle; margin-right: 0.75em; margin-left: 0.75em;\"><span>▢</span><span style=\"display: inline-flex; flex-direction: column; line-height: 0.25em; margin: 0.075em 0 0.125em; font-size: 1.25em;\"><span style=\"display: inline-flex; margin-top: 0.125em; transform: translateX(0.125em);\"><span>—</span><span>—</span><span style=\"margin-left: -0.5em; transform: translateY(0.1em); font-size: 0.75em;\">></span></span><span style=\"display: inline-flex; margin-bottom: 0.25em; transform: translateX(0.125em);\"><span style=\"margin-right: -0.5em; transform: translateY(0.1em); font-size: 0.75em;\"><</span><span>—</span><span>—</span></span></span><span>▢</span></span><span>▢ + ▢</span></span>",
   "": "",
   "\\overset{+4}{Mn}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px; vertical-align: middle;\"><span style=\"display: inline-flex; flex-direction: column; line-height: 0.75em; vertical-align: 0.75em;\"><span style=\"font-size: 0.625em; align-self: center;\">+4</span><span style=\"font-style: italic;\">Mn</span></span></span>",
   "MnO_{2}": "<span style=\"font-family: 'Times New Roman', Times, serif; display: inline-block; font-size: 16px;\"><span style=\"font-style: italic;\">MnO</span><span style=\"font-size: 0.625em; vertical-align: sub;\">2</span></span>",
